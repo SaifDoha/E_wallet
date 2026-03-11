@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Wallet | Effectuer une transaction</title>
+        <link rel="stylesheet" href="/src/css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+    <header>
+        <nav class="navbar">
+            <a href="/index.html" class="logo">
+            <img src="/src/assets/e-wallet-logo.avif" alt="Logo">
+            </a>
+            <ul class="nav-links">
+            <li><a href="/src/Views/dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+
+    <section class="transaction-section">
+
+    <div class="transaction-container">
+
+        <h2>Effectuer une transaction</h2>
+        <form id="transactionForm" class="transaction-form">
+            <!-- Beneficiaire -->
+            <div class="form-group">
+                <label for="beneficiary">
+                <i class="fas fa-user"></i> Bénéficiaire
+                </label>
+
+                <input type="text"
+                 id="beneficiary"
+                placeholder="Nom du bénéficiaire"
+                required
+                >
+            </div>
+            <!-- Carte -->
+            <div class="form-group">
+                <label for="sourceCard">
+                <i class="fas fa-credit-card"></i> Carte utilisée
+                </label>
+
+                <input
+                type="text"
+                id="sourceCard"
+                placeholder="Numéro de carte"
+                required
+                >
+            </div>
+
+            <!-- Type -->
+            <div class="form-group">
+
+            <label for="transactionType">
+            <i class="fas fa-exchange-alt"></i> Type
+            </label>
+
+            <select id="transactionType" required>
+
+            <option value="">Choisir</option>
+            <option value="debit">Débit</option>
+            <option value="credit">Crédit</option>
+
+            </select>
+
+            </div>
+
+
+            <!-- Montant -->
+            <div class="form-group">
+
+            <label for="amount">
+            <i class="fas fa-money-bill"></i> Montant
+            </label>
+
+            <input
+            type="number"
+            id="amount"
+            placeholder="0.00"
+            required
+            >
+
+            </div>
+
+
+            <!-- Description -->
+            <div class="form-group">
+
+            <label for="description">
+            <i class="fas fa-sticky-note"></i> Description
+            </label>
+
+            <input
+            type="text"
+            id="description"
+            placeholder="Optionnel"
+            >
+            </div>
+            <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="history.back()">Annuler</button>
+            <button type="submit"id="Valide" class="btn btn-primary"> Valider</button>
+        </div>
+
+    </form>
+    </div>
+    </section>
+    </main>
+    <footer>
+    <p>© 2026 E-Wallet</p>
+    </footer>
+    <script type="module" src="/src/Controller/transaction.js"></script>
+    </body>
+    </html>
